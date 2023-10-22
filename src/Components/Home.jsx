@@ -1,4 +1,6 @@
 import CarCards from "./CarCards";
+import Contact from "./Contact";
+import Faq from "./Faq";
 
 
 const Home = () => {
@@ -27,6 +29,13 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="max-w-6xl mx-auto mt-16 mb-16">
+                <h1 className="text-5xl mb-10 font-bold text-center text-blue-500">Why Choose Us??</h1>
+                <Faq></Faq>
+            </div>
+            <div className="max-w-6xl mx-auto mt-16 mb-16">
+                <Contact></Contact>
             </div>
         </div>
     );
