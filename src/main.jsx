@@ -10,6 +10,7 @@ import Home from './Components/Home.jsx';
 import AddCar from './Components/AddCar.jsx';
 import MyCart from './Components/MyCart.jsx';
 import Login from './Components/Login.jsx';
+import Details from './Details';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login></Login>
+      },
+      {
+        path: '/details/:id',
+        element: <Details></Details>,
+        loader: () => fetch('http://localhost:5000/car')
       }
     ]
   },
