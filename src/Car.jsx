@@ -6,17 +6,17 @@ const Car = ({car}) => {
 
     return (
         <div>
-            <div className="bg-base-100 p-3 h-[500px] shadow-xl">
+            <div className="bg-base-100 p-3 h-[550px] shadow-xl">
                 <h1 className="text-center text-2xl font-medium mb-3">{brand}</h1>
-                <figure><img className="w-[400px] h-[200px]" src={photo} alt="Shoes" /></figure>
+                <figure><img className="w-[400px] h-[250px]" src={photo} alt="Shoes" /></figure>
                 <div>
                     <div className="flex justify-between mb-4">
-                    <h2><span className="font-semibold">Name:</span> {name}</h2>
-                    <h2><span className="font-semibold">Type:</span> {type}</h2>
+                    <h2><span className="font-semibold">Name: </span> {name}</h2>
+                    <h2><span className="font-semibold">Type: </span> {type}</h2>
                     </div>
                     <div className="flex justify-between">
-                    <p><span className="font-semibold">Price:</span>${price}</p>
-                    <p><span className="font-semibold">Rating:</span>${rating}</p>
+                    <p><span className="font-semibold">Price: </span>${price}</p>
+                    <p><span className="font-semibold">Rating: </span>{rating}</p>
                     </div>
                     
                     <div className="mt-8">

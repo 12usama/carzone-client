@@ -28,8 +28,10 @@ const Details = () => {
             <div className="mb-20">
                 <Adv></Adv>
             </div>
+            <h1 className="text-center text-5xl font-bold text-blue-400 my-10">Car Collections</h1>
             
-            <div className=" gap-5 grid grid-cols-1 lg:grid-cols-2 justify-center items-center">
+            <div className=" gap-6 grid grid-cols-1 lg:grid-cols-2 justify-center items-center">
+                
             {
                 cars.map(car => <Car key={car.id} car={car}></Car>)
             }
