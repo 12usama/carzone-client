@@ -2,7 +2,7 @@
 
 const Car = ({car}) => {
 
-    const {name, brand, type, photo, price, rating, description} = car;
+    const {_id, name, brand, type, photo, price, rating, description} = car;
 
     return (
         <div>
