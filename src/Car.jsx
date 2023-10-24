@@ -1,11 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Car = ({car}) => {
     
     const {_id, name, brand, type, photo, price, rating, description} = car;
 
-    const navigate = useNavigate()
+    
 
     return (
         <div>
@@ -23,7 +23,9 @@ const Car = ({car}) => {
                     </div>
                     
                     <div className="mt-8">
-                        <button onClick={()=>{navigate(`cardetail/${_id}`)}} className="btn btn-block bg-blue-500 text-xl text-white mb-2">Details</button>
+                        <Link to={`/cardetails/${_id}`}>
+                        <button  className="btn btn-block bg-blue-500 text-xl text-white mb-2">Details</button>
+                        </Link>
                         <Link to={`/updatecar/${_id}`}>
                         <button className="btn btn-block bg-red-500 text-xl text-white">UPdate</button>
                         </Link>

@@ -46,7 +46,7 @@ const UpdateCar = () => {
         
         <div className="bg-blue-200 p-24 mt-10">
             <div>
-                <h1>Update Car {name}</h1>
+                <h1 className="text-4xl font-bold text-center mb-5">Update : {name}</h1>
             </div>
             <form onSubmit={handleUpdateCar}>
                 {/* first row */}
