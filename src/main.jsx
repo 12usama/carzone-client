@@ -11,6 +11,7 @@ import AddCar from './Components/AddCar.jsx';
 import MyCart from './Components/MyCart.jsx';
 import Login from './Components/Login.jsx';
 import Details from './Details';
+import UpdateCar from './UpdateCar';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
         path: '/details/:brand_name',
         element: <Details></Details>,
         loader: ({params}) => fetch(`http://localhost:5000/carcards/${params.brand_name}`)
+      },
+      {
+        path: '/updatecar/:id',
+        element: <UpdateCar></UpdateCar>,
+        loader: ({params}) => fetch(`http://localhost:5000/car/${params.id}`)
       }
     ]
   },
