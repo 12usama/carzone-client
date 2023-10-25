@@ -15,6 +15,7 @@ import UpdateCar from './UpdateCar';
 import CarDetail from './CarDetail';
 import SignUp from './Components/SignUp';
 import AuthProvider from './Components/providers/AuthProvider';
+import PrivateRoute from './Components/PrivateRoute';
 
 
 
@@ -29,11 +30,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/addCars',
-        element: <AddCar></AddCar>
+        element: <PrivateRoute><AddCar></AddCar></PrivateRoute>
       },
       {
         path: '/myCart',
-        element: <MyCart></MyCart>
+        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>
       },
       {
         path: '/login',
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/details/:brand_name',
-        element: <Details></Details>,
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/carcards/${params.brand_name}`)
       },
       {
