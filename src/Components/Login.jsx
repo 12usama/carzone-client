@@ -2,9 +2,26 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from 'react-icons/fa';
 import { useContext } from "react";
 import { AuthContext } from "./providers/AuthProvider";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth } from "firebase/auth";
+import app from "./firebase/firebase.config";
 
 
 const Login = () => {
+    const auth = getAuth(app);
+
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () =>{
+        signInWithPopup(auth, provider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error =>{
+            console.log('error', error.message)
+        })
+    }
 
     const {signIn} = useContext(AuthContext)
     const location = useLocation();
@@ -54,7 +71,7 @@ const Login = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary mb-3">Login</button>
-                            <button className="btn border border-blue-500 bg-blue-500 text-white mb-3">
+                            <button onClick={handleGoogleSignIn} className="btn border border-blue-500 bg-blue-500 text-white mb-3">
                                     <FaGoogle></FaGoogle>
                                     Login With Google
                                 </button>

@@ -2,9 +2,29 @@ import { NavLink } from "react-router-dom";
 import { FaGoogle } from 'react-icons/fa';
 import { useContext } from "react";
 import { AuthContext } from "./providers/AuthProvider";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth } from "firebase/auth";
+import app from "./firebase/firebase.config";
 
 
 const SignUp = () => {
+
+    const auth = getAuth(app);
+
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () =>{
+        signInWithPopup(auth, provider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error =>{
+            console.log('error', error.message)
+        })
+    }
+
+
     const {createUser} = useContext(AuthContext);
 
     const handleSignup = e =>{
@@ -41,7 +61,7 @@ const SignUp = () => {
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl text-red-500 font-bold">Sign In now!</h1>
                         <p className="py-6 text-xl">If you dont have any account, then you can easily sign up here. <br /> and then you can easily log in anytime.</p>
-                        <button className="btn border border-blue-500 bg-blue-500 text-white">
+                        <button onClick={handleGoogleSignIn} className="btn border border-blue-500 bg-blue-500 text-white">
                                 <FaGoogle></FaGoogle>
                                  Login With Google
                         </button>
