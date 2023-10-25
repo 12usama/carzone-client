@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const CarDetail = () => {
@@ -13,7 +13,9 @@ const CarDetail = () => {
                     <div>
                         <h1 className="text-5xl text-blue-500 font-bold">{name}</h1>
                         <p className="py-6 font-medium">{description}</p>
-                        <button className="btn bg-red-500 font-bold text-white">Add to Cart ${price}</button> 
+                        <Link to={'/myCart'}>
+                        <button className="btn bg-red-500 font-bold text-white">Add to Cart ${price}</button>
+                        </Link> 
                     </div>
                 </div>
             </div>

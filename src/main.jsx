@@ -13,6 +13,10 @@ import Login from './Components/Login.jsx';
 import Details from './Details';
 import UpdateCar from './UpdateCar';
 import CarDetail from './CarDetail';
+import SignUp from './Components/SignUp';
+import AuthProvider from './Components/providers/AuthProvider';
+
+
 
 const router = createBrowserRouter([
   {
@@ -36,6 +40,10 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
+        path: '/signup',
+        element: <SignUp></SignUp>
+      },
+      {
         path: '/details/:brand_name',
         element: <Details></Details>,
         loader: ({params}) => fetch(`http://localhost:5000/carcards/${params.brand_name}`)
@@ -56,6 +64,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
