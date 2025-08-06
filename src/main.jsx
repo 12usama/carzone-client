@@ -47,17 +47,17 @@ const router = createBrowserRouter([
       {
         path: '/details/:brand_name',
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/carcards/${params.brand_name}`)
+        loader: ({params}) => fetch(`https://carzone-server-eta.vercel.app/carcards/${params.brand_name}`)
       },
       {
         path: '/updatecar/:id',
         element: <UpdateCar></UpdateCar>,
-        loader: ({params}) => fetch(`http://localhost:5000/car/${params.id}`)
+        loader: ({params}) => fetch(`https://carzone-server-eta.vercel.app/car/${params.id}`)
       },
       {
         path:'/cardetails/:id',
         element: <CarDetail></CarDetail>,
-        loader: ({params}) => fetch(`http://localhost:5000/car/${params.id}`)
+        loader: ({params}) => fetch(`https://carzone-server-eta.vercel.app/car/${params.id}`)
       }
     ]
   },

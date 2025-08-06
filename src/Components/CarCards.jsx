@@ -7,7 +7,7 @@ const CarCards = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/carcards')
+        fetch('https://carzone-server-eta.vercel.app/carcards')
         .then(res => res.json())
         .then(data => setCards(data))
     },[])

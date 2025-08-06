@@ -13,7 +13,7 @@ const Details = () => {
     const [cars , setCars] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/car')
+        fetch('https://carzone-server-eta.vercel.app/car')
         .then(res => res.json())
         .then(data => {
             console.log(data);
