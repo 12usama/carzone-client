@@ -1,8 +1,8 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { FaGoogle } from 'react-icons/fa';
+
 import { useContext } from "react";
 import { AuthContext } from "./providers/AuthProvider";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
 import { getAuth } from "firebase/auth";
 import app from "./firebase/firebase.config";
 
@@ -10,18 +10,7 @@ import app from "./firebase/firebase.config";
 const Login = () => {
     const auth = getAuth(app);
 
-    const provider = new GoogleAuthProvider();
-
-    const handleGoogleSignIn = () =>{
-        signInWithPopup(auth, provider)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error =>{
-            console.log('error', error.message)
-        })
-    }
+    
 
     const {signIn} = useContext(AuthContext)
     const location = useLocation();
@@ -34,11 +23,12 @@ const Login = () => {
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
+        console.log(email,password);
         signIn(email, password)
         .then(result => {
             console.log(result.user);
 
-            navigate(location?. state ? location.state : '/');
+            navigate(location?.state?.from?.pathname || '/');
         })
         .catch(error =>{
             console.error(error);
@@ -71,10 +61,6 @@ const Login = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary mb-3">Login</button>
-                            <button onClick={handleGoogleSignIn} className="btn border border-blue-500 bg-blue-500 text-white mb-3">
-                                    <FaGoogle></FaGoogle>
-                                    Login With Google
-                                </button>
                             <p>Dont have id then {links} </p>
                         </div>
                     </form>

@@ -1,8 +1,6 @@
-import { NavLink } from "react-router-dom";
-import { FaGoogle } from 'react-icons/fa';
+import { NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./providers/AuthProvider";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import app from "./firebase/firebase.config";
 
@@ -10,44 +8,37 @@ import app from "./firebase/firebase.config";
 const SignUp = () => {
 
     const auth = getAuth(app);
+    const navigate = useNavigate(); // Add this
 
-    const provider = new GoogleAuthProvider();
 
-    const handleGoogleSignIn = () =>{
-        signInWithPopup(auth, provider)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error =>{
-            console.log('error', error.message)
-        })
-    }
-
+    /*const name = form.get('name');
+    const email = form.get('email');
+    const phone = form.get('phone');
+    const gender = form.get('gender');
+    const password = form.get('password');*/
 
     const {createUser} = useContext(AuthContext);
 
-    const handleSignup = e =>{
+    const handleSignup = async (e) => {
         e.preventDefault();
-        console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
-
         const name = form.get('name');
         const email = form.get('email');
         const phone = form.get('phone');
         const gender = form.get('gender');
         const password = form.get('password');
-        console.log(name, email, phone, gender, password);
-
-        createUser(email, password)
-        .then(result =>{
-            console.log(result.user)
-        })
-        .catch(error =>{
-            console.error(error)
-        })
- 
-    }
+      
+        try {
+          console.log("Calling createUser...");
+          const result = await createUser(email, password);
+          console.log("✅ User created", result.user);
+          console.log("Navigating to home...");
+          navigate("/");
+        } catch (err) {
+          console.error("❌ Error:", err.message);
+        }
+      };
+      
 
     const links = <>
     <a className="text-blue-500 font-medium"><NavLink to="/login" >Go to login</NavLink></a>
@@ -61,10 +52,7 @@ const SignUp = () => {
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl text-red-500 font-bold">Sign In now!</h1>
                         <p className="py-6 text-xl">If you dont have any account, then you can easily sign up here. <br /> and then you can easily log in anytime.</p>
-                        <button onClick={handleGoogleSignIn} className="btn border border-blue-500 bg-blue-500 text-white">
-                                <FaGoogle></FaGoogle>
-                                 Login With Google
-                        </button>
+                        
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSignup} className="card-body">
@@ -107,7 +95,7 @@ const SignUp = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Sign in</button>
+                                <button type="submit" className="btn btn-primary">Sign in</button>
                             </div>
                         </form>
                     </div>

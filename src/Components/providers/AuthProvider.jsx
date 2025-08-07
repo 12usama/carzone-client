@@ -9,6 +9,7 @@ const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) =>{
+        console.log("createUser called in context"); 
         setLoading(true);
         return createUserWithEmailAndPassword(auth,email,password);
     }
