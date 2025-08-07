@@ -80,7 +80,7 @@ VITE_API_URL=https://your-backend-api-url.com
 
 Developed by **Md. Usama Alam Ridwane**
 
-- 🔗 LinkedIn: [https://www.linkedin.com/in/md-usama-alam-ridwane-376b3a1a4/]
+- 🔗 LinkedIn: [https://www.linkedin.com/in/md-usama-alam-ridwane-376b3a1a4/](https://www.linkedin.com/in/md-usama-alam-ridwane-376b3a1a4/)
 
 
 
