@@ -22,36 +22,6 @@ CarZone is a modern car selling platform where users can explore, buy, and manag
 
 ---
 
-## 🖼️ Screenshots
-
-### 🏠 Home Page  
-![Home Page](https://i.ibb.co.com/5Xg2Tjtt/homepage1.png)
-
-### 🛒 Add Car  
-![Add Car](https://i.ibb.co.com/WvqWBQ7G/addCar.png)
-
-### 🔐 Login Page  
-![Login Page](https://i.ibb.co.com/5ztZM4D/login.png)
-
-### 🔐 Signin Page  
-![Signin Page](https://i.ibb.co.com/FFY2by4/signin.png)
-
----
-
-## 🛠 Tech Stack
-
-| Technology     | Purpose                        |
-|----------------|--------------------------------|
-| React + Vite   | Frontend Framework             |
-| Tailwind CSS   | Styling                        |
-| DaisyUI        | UI Components                  |
-| Firebase Auth  | User Authentication            |
-| Axios / Fetch  | API Calls                      |
-| React Router   | Client-side Routing            |
-| Vercel         | Deployment                     |
-
----
-
 ## 🚀 Getting Started (Local Setup)
 
 Clone the project and install dependencies:
@@ -77,7 +47,45 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
 VITE_API_URL=https://your-backend-api-url.com
 ```
+
 ---
+
+## 🛠 Tech Stack
+
+| Technology     | Purpose                        |
+|----------------|--------------------------------|
+| React + Vite   | Frontend Framework             |
+| Tailwind CSS   | Styling                        |
+| DaisyUI        | UI Components                  |
+| Firebase Auth  | User Authentication            |
+| Axios / Fetch  | API Calls                      |
+| React Router   | Client-side Routing            |
+| Vercel         | Deployment                     |
+
+---
+
+## 🛠️ Backend Repository
+
+👉 Check out the backend code here: [carzone-server](https://github.com/12usama/carzone-server)
+
+---
+
+## 🖼️ Screenshots
+
+### 🏠 Home Page  
+![Home Page](https://i.ibb.co.com/5Xg2Tjtt/homepage1.png)
+
+### 🛒 Add Car  
+![Add Car](https://i.ibb.co.com/WvqWBQ7G/addCar.png)
+
+### 🔐 Login Page  
+![Login Page](https://i.ibb.co.com/5ztZM4D/login.png)
+
+### 🔐 Signin Page  
+![Signin Page](https://i.ibb.co.com/FFY2by4/signin.png)
+
+---
+
 
 
 ## 🙋‍♂️ Author
