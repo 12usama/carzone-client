@@ -61,6 +61,7 @@ VITE_FIREBASE_APP_ID=your_app_id
 VITE_API_URL=https://your-backend-api-url.com
 
 
+
 ## 📸 Screenshots
 
 ### Homepage
@@ -80,7 +81,8 @@ VITE_API_URL=https://your-backend-api-url.com
 
 Developed by **Md. Usama Alam Ridwane**
 
-- 🔗 LinkedIn: [https://www.linkedin.com/in/md-usama-alam-ridwane-376b3a1a4/](https://www.linkedin.com/in/md-usama-alam-ridwane-376b3a1a4/)
+- - 🔗 [Connect on LinkedIn](https://www.linkedin.com/in/md-usama-alam-ridwane-376b3a1a4/)
+
 
 
 
