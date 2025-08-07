@@ -59,3 +59,28 @@ VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
 VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
 VITE_API_URL=https://your-backend-api-url.com
+
+
+## 📸 Screenshots
+
+### Homepage
+![Homepage](./homepage1.png)
+![Homepage](./homepage2.png)
+
+### Login Page
+![Login](./login.png)
+
+### Signin Page
+![Login](./signin.png)
+
+### Add Car Page
+![Login](./addCar.png)
+
+## 🙋‍♂️ Author
+
+Developed by **Md. Usama Alam Ridwane**
+
+- 🔗 LinkedIn: [https://www.linkedin.com/in/md-usama-alam-ridwane-376b3a1a4/]
+
+
+
