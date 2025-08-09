@@ -6,7 +6,7 @@ CarZone is a modern car selling platform where users can explore, buy, and manag
 
 ## 🔗 Live Demo
 
-🌐 [https://carzone-client.vercel.app/](https://carzone-client.vercel.app/)
+🌐 [https://carzone-client-1czv.vercel.app/](https://carzone-client-1czv.vercel.app/)
 
 ---
 
